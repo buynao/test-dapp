@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import BasicCard from '../Card';
 import {
   useAccount,
@@ -44,6 +44,7 @@ function Approve() {
   const { chain } = useNetwork();
   const [customContract, setCustomContract] = useState('');
   const [contractListByNetWork, setContractLis] = useState(
+    // @ts-ignore
     getContractsById(chain?.id),
   );
   const { address: accountAddress } = useAccount();
@@ -128,6 +129,7 @@ function Approve() {
   const { write, status, data } = useContractWrite(config);
 
   const { config: nameConfig } = usePrepareContractWrite({
+    // @ts-ignore
     address: customContract,
     abi: erc20abi,
     functionName: 'name',
@@ -189,7 +191,7 @@ function Approve() {
   }, []);
   return (
     <Fragment>
-      <BasicCard
+      <BasicCard // @ts-ignore
         buttons={buttons}
         list={[
           { type: 'title', title: 'Approve' },

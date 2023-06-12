@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react';
 import {
   EthereumClient,
   w3mConnectors,
@@ -19,8 +18,8 @@ import Permit from './components/Ethereum/Permit';
 import SeaPort from './components/Ethereum/SeaPort';
 
 function isInMobile() {
-  let userAgent = navigator.userAgent;
-  let mobileKeywords = [
+  const userAgent = navigator.userAgent;
+  const mobileKeywords = [
     'Android',
     'iPhone',
     'iPod',
@@ -28,15 +27,15 @@ function isInMobile() {
     'Windows Phone',
     'BlackBerry',
   ];
-  for (let i = 0; i < mobileKeywords.length; i++) {
-    if (userAgent.includes(mobileKeywords[i])) {
+  for (const mobileKeyword of mobileKeywords) {
+    if (userAgent.includes(mobileKeyword)) {
       return true;
     }
   }
   return false;
 }
 const chains = [mainnet, arbitrum, goerli, polygon];
-const projectId = '2490cd32f240f4702858c55f8cf869e4';
+const projectId = process.env.projectId as string;
 // 2. Configure wagmi client
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({

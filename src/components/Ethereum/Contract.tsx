@@ -1,11 +1,10 @@
 import * as React from 'react';
 import BasicCard from '../Card';
-import { useSignMessage, useAccount } from 'wagmi';
+import { useSignMessage } from 'wagmi';
 import { getValueByContract } from '../../utils/index';
 const msg = 'imToken';
 
 function EthSign() {
-  const { address } = useAccount();
   const [message, setMessage] = React.useState(msg);
   const { signMessage, ...data } = useSignMessage({
     message,

@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/add';
 import TextField from '@mui/material/TextField';

@@ -9,6 +9,7 @@ export const getValueByContract = ({ data, status }: any) => {
     idle: 'idle...',
     success: data?.toString(),
   };
+  // @ts-ignore
   return resultByStatus[status];
 };
 

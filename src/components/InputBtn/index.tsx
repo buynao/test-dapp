@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/add';
+import { AddBoxOutlined } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
 
 type Props = {
@@ -36,7 +36,7 @@ export default function InputBtn({ value, setValue, saveValue, label }: Props) {
         sx={{}}
         aria-label="add"
       >
-        <AddIcon />
+        <AddBoxOutlined />
       </IconButton>
     </Box>
   );

@@ -104,7 +104,7 @@ function SignTypeData() {
             type: 'textArea',
             title: 'Domain',
             label: 'Domain',
-            rows: 8,
+            rows: 6,
             value: domain,
             setValue: setDomain,
           },

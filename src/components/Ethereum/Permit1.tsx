@@ -47,18 +47,18 @@ const msgParams = {
         ]
     },
     "domain": {
-        "name": "Tokenlon",
+        "name": "TST",
         "version": "1",
         "chainId": 5,
-        "verifyingContract": "0x6da0e6abd44175f50c563cd8b860dd988a7c3433"
+        "verifyingContract": "0x004c13f6f5ef19cd6d0244bd268b6c84f5fe2228"
     },
     "primaryType": "Permit",
     "message": {
-        "owner": "0x068e866a5b6a968599c353ee359442ec7bbc9b61",
-        "spender": "0x235d9b4249e9c9d705fac6e98f7d21e58091220a",
-        "value": "100000000000000000000",
-        "nonce": "52",
-        "deadline": "1690792519"
+        "owner": "0xe9a147eadb46df9b149fd01a1a2a296263fae7ee",
+        "spender": "0x0000000000000000000000000000000000000001",
+        "value": "1",
+        "nonce": "0",
+        "deadline": "115792089237316195423570985008687907853269984665640564039457584007913129639935"
     }
 }
 
@@ -100,7 +100,7 @@ function SignTypeData() {
         list={[
           {
             type: 'title',
-            title: 'TokenLon - Permit',
+            title: 'TST - Permit',
           },
           {
             type: 'textArea',

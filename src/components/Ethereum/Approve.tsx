@@ -19,7 +19,7 @@ import {
 import { erc20abi } from '../../abi';
 import { getContractsById, ContractAddress, InputValue } from '../../constant';
 import { BigNumber } from 'ethers';
-import { isValidAddress } from 'ethereumjs-util';
+
 const selectApproveMethods = [
   {
     value: 'approve',
@@ -203,7 +203,7 @@ function Approve() {
               setCustomContract(val);
             },
             saveValue: () => {
-              if (isValidAddress(customContract)) {
+              if (customContract.length > 10) {
                 writeName?.();
               }
             },

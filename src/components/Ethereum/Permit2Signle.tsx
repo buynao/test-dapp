@@ -3,37 +3,43 @@ import BasicCard from '../Card';
 import { useSignTypedData, useAccount } from 'wagmi';
 import { getValueByContract, jsonParse, jsonString } from '../../utils/index';
 
-const msgParams = {
+const msgParams ={
     "types": {
-        "Permit": [
+        "PermitSingle": [
             {
-                "name": "owner",
-                "type": "address"
+                "name": "details",
+                "type": "PermitDetails"
             },
             {
                 "name": "spender",
                 "type": "address"
             },
             {
-                "name": "value",
+                "name": "sigDeadline",
                 "type": "uint256"
+            }
+        ],
+        "PermitDetails": [
+            {
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "name": "amount",
+                "type": "uint160"
+            },
+            {
+                "name": "expiration",
+                "type": "uint48"
             },
             {
                 "name": "nonce",
-                "type": "uint256"
-            },
-            {
-                "name": "deadline",
-                "type": "uint256"
+                "type": "uint48"
             }
         ],
         "EIP712Domain": [
             {
                 "name": "name",
-                "type": "string"
-            },
-            {
-                "name": "version",
                 "type": "string"
             },
             {
@@ -47,18 +53,20 @@ const msgParams = {
         ]
     },
     "domain": {
-        "name": "Tokenlon",
-        "version": "1",
+        "name": "Permit2",
         "chainId": 5,
-        "verifyingContract": "0x6da0e6abd44175f50c563cd8b860dd988a7c3433"
+        "verifyingContract": "0x000000000022d473030f116ddee9f6b43ac78ba3"
     },
-    "primaryType": "Permit",
+    "primaryType": "PermitSingle",
     "message": {
-        "owner": "0x068e866a5b6a968599c353ee359442ec7bbc9b61",
-        "spender": "0x235d9b4249e9c9d705fac6e98f7d21e58091220a",
-        "value": "100000000000000000000",
-        "nonce": "52",
-        "deadline": "1690792519"
+        "details": {
+            "token": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+            "amount": "1461501637330902918203684832716283019655932542975",
+            "expiration": "1692344904",
+            "nonce": "0"
+        },
+        "spender": "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad",
+        "sigDeadline": "1689754704"
     }
 }
 
@@ -76,7 +84,7 @@ function SignTypeData() {
   });
   const buttons = [
     {
-      name: 'permit',
+      name: 'permit2',
       disabled: !address,
       onClick: () => {
         signTypedData();
@@ -100,7 +108,7 @@ function SignTypeData() {
         list={[
           {
             type: 'title',
-            title: 'TokenLon - Permit',
+            title: 'Uniswap - PermitSingle',
           },
           {
             type: 'textArea',

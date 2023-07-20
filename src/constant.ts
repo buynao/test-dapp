@@ -67,5 +67,5 @@ export const getContractsById = (id: number) => {
   if (id === 5) {
     return list[id] || goerliContract;
   }
-  return list?.[id] || mainnetContract;
+  return list?.[id] || goerliContract;
 };

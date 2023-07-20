@@ -42,6 +42,10 @@ export const goerliContract: InputValue[] = [
     value: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
     name: 'Uni',
   },
+  {
+    value: '0x004c13f6f5ef19cd6d0244bd268b6c84f5fe2228',
+    name: 'TST',
+  },
 ];
 export const opContract: InputValue[] = [
   {

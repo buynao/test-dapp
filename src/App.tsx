@@ -17,7 +17,6 @@ import Permit from './components/Ethereum/Permit';
 import Permit1 from './components/Ethereum/Permit1';
 import PermitSignle from './components/Ethereum/Permit2Signle';
 import Permit2Batch from './components/Ethereum/Permit2Batch';
-import SeaPort from './components/Ethereum/SeaPort';
 
 function isInMobile() {
   const userAgent = navigator.userAgent;

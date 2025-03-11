@@ -33,11 +33,21 @@ const selectApproveMethods = [
     value: 'increaseAllowance',
     name: 'increaseAllowance',
   },
+  {
+    value: 'increaseApproval',
+    name: 'increaseApproval',
+  },
+  {
+    value: 'decreaseApproval',
+    name: 'decreaseApproval',
+  },
 ];
 const erc20 = new ethers.utils.Interface([
   'function approve(address spender, uint256 amount) external payable',
   'function decreaseAllowance(address spender, uint256 subtractedValue) external payable',
   'function increaseAllowance(address spender, uint256 addedValue) external payable',
+  'function increaseApproval(address spender, uint256 addedValue) external payable',
+  'function decreaseApproval(address spender, uint256 subtractedValue) external payable',
 ]);
 
 function Approve() {
